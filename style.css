@@ -115,6 +115,7 @@ body {
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     box-shadow: 0 4px 15px rgba(255, 150, 201, 0.3);
     cursor: pointer;
+    text-decoration: none;
 }
 
 .donate-btn:hover {
@@ -182,6 +183,7 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    text-decoration: none;
 }
 
 .btn-primary {
@@ -224,6 +226,7 @@ body {
     font-weight: 600;
     font-size: 15px;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    text-decoration: none;
 }
 
 .btn-support:hover {
@@ -334,8 +337,11 @@ body {
 
 .pets-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px;
+    padding: 0 20px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .pet-card {
@@ -354,7 +360,7 @@ body {
 .pet-image-wrapper {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 240px;
     overflow: hidden;
     background: linear-gradient(135deg, #FFE8F5 0%, #F0F8FF 100%);
 }
@@ -363,6 +369,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.3s ease;
 }
 
@@ -395,43 +402,49 @@ body {
 }
 
 .pet-info {
-    padding: 20px;
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
 }
 
 .pet-name {
     font-size: 18px;
     font-weight: 700;
     color: #333;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .pet-meta {
-    font-size: 13px;
+    font-size: 12px;
     color: #999;
     margin-bottom: 10px;
+    font-weight: 500;
 }
 
 .pet-desc {
     font-size: 14px;
     color: #666;
-    margin-bottom: 15px;
-    line-height: 1.5;
+    margin-bottom: 16px;
+    line-height: 1.6;
+    flex-grow: 1;
 }
 
 .btn-adopt-main {
     background: linear-gradient(135deg, #FFB6D9 0%, #FF9EC9 100%);
     color: white;
     border: 2px solid #FF9EC9;
-    padding: 14px 24px;
+    padding: 13px 24px;
     border-radius: 22px;
     font-size: 15px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    width: auto;
-    margin: 0 auto 0 auto;
+    width: 100%;
+    margin: 0 auto;
     display: block;
+    text-align: center;
     box-shadow: 0 4px 12px rgba(255, 150, 201, 0.3);
+    text-decoration: none;
 }
 
 .btn-adopt-main:hover {
@@ -767,7 +780,8 @@ body {
 
 .modal-header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 25px;
     padding-bottom: 20px;
     border-bottom: 2px solid #FFE8F5;
 }
@@ -783,6 +797,7 @@ body {
     color: #333;
     font-size: 24px;
     margin-bottom: 8px;
+    margin-top: 0;
 }
 
 .modal-header p {
@@ -792,8 +807,9 @@ body {
 }
 
 .modal-body {
-    max-height: 70vh;
+    max-height: 60vh;
     overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
 .donate-modal {
@@ -804,6 +820,7 @@ body {
 
 .details-modal {
     max-width: 600px;
+    padding-top: 50px !important;
 }
 
 .search-form-modal {
@@ -1155,7 +1172,44 @@ body {
     }
 
     .pets-grid {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .pet-image-wrapper {
+        height: 220px;
+    }
+
+    .pet-info {
+        padding: 16px 14px;
+    }
+
+    .pet-name {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .pet-meta {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    .pet-desc {
+        font-size: 13px;
+        margin-bottom: 12px;
+        line-height: 1.5;
+    }
+
+    .btn-learn-more {
+        font-size: 13px;
+        padding: 10px 12px;
+        margin-bottom: 8px;
+    }
+
+    .btn-adopt-main {
+        font-size: 14px;
+        padding: 11px 16px;
     }
 
     .stats {
@@ -1207,11 +1261,45 @@ body {
 
     .modal-content {
         width: 95%;
-        padding: 20px;
+        padding: 50px 20px 20px 20px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-header {
+        margin-top: 0;
+        margin-bottom: 25px;
+        padding-bottom: 20px;
+    }
+
+    .modal-header h2 {
+        font-size: 24px;
+    }
+
+    .modal-close {
+        right: 12px;
+        top: 12px;
+        width: 40px;
+        height: 40px;
+        font-size: 26px;
+        z-index: 1001;
+    }
+
+    .details-modal {
+        padding-top: 60px !important;
     }
 
     .amount-buttons {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .btn-primary {
+        padding: 12px 20px !important;
+        font-size: 16px !important;
     }
 }
 
@@ -1230,6 +1318,59 @@ body {
 
     .pets-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .pet-card {
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .pet-image-wrapper {
+        height: 280px;
+    }
+
+    .pet-image {
+        object-position: center;
+    }
+
+    .pet-info {
+        padding: 18px 16px;
+    }
+
+    .pet-name {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .pet-meta {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .pet-desc {
+        font-size: 14px;
+        margin-bottom: 15px;
+        line-height: 1.6;
+    }
+
+    .btn-learn-more {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+        margin-bottom: 10px;
+        border-radius: 18px;
+    }
+
+    .btn-adopt-main {
+        width: 100%;
+        padding: 13px 20px;
+        font-size: 15px;
+        font-weight: 700;
+        border-radius: 20px;
+        margin-top: 5px;
     }
 
     .stats {
@@ -1240,24 +1381,137 @@ body {
         padding: 10px 15px;
         font-size: 12px;
     }
+
+    .support-section {
+        padding: 30px 20px;
+        margin: 30px auto;
+    }
+
+    .support-section h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .support-buttons {
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .support-buttons .btn {
+        min-width: auto;
+        width: 100%;
+        padding: 14px 16px;
+        font-size: 14px;
+    }
+
+    .btn-support {
+        background: linear-gradient(135deg, #FFB6D9 0%, #FF9EC9 100%) !important;
+        color: white !important;
+        border: none !important;
+        padding: 14px 16px !important;
+        font-size: 14px !important;
+    }
+
+    .volunteer-form-modal {
+        max-width: 95vw;
+        padding: 50px 15px 20px 15px !important;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-content {
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-header {
+        margin-top: 5px;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+
+    .modal-header h2 {
+        font-size: 22px;
+    }
+
+    .modal-header p {
+        font-size: 12px;
+    }
+
+    .modal-close {
+        right: 10px;
+        top: 10px;
+        width: 38px;
+        height: 38px;
+        font-size: 24px;
+        z-index: 1001;
+    }
+
+    .details-modal {
+        padding-top: 55px !important;
+    }
+
+    .close-btn {
+        font-size: 28px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .form-header {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+
+    .form-icon {
+        font-size: 36px;
+    }
+
+    .form-header h3 {
+        font-size: 18px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px !important;
+        padding: 10px !important;
+    }
+
+    .modal-content .btn-primary {
+        width: 100% !important;
+        padding: 14px !important;
+        font-size: 16px !important;
+        margin-top: 15px !important;
+        background: linear-gradient(135deg, #FFB6D9 0%, #FF9EC9 100%) !important;
+        color: white !important;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 12px 16px;
+        font-size: 14px;
+        width: 100%;
+    }
 }
 /* ===== 宠物卡片按钮样式 ===== */
 .btn-learn-more {
     background: linear-gradient(135deg, rgba(255, 182, 217, 0.3) 0%, rgba(255, 158, 201, 0.2) 100%);
     color: #FF9EC9;
     border: 2px solid #FFB6D9;
-    padding: 12px 20px;
+    padding: 11px 18px;
     border-radius: 20px;
     font-size: 14px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     display: block;
     text-align: center;
     box-shadow: 0 4px 12px rgba(255, 150, 201, 0.15);
     backdrop-filter: blur(10px);
+    text-decoration: none;
 }
 
 .btn-learn-more:hover {
