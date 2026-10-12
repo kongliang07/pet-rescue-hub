@@ -641,13 +641,16 @@ body {
 .protection-item h3 {
     font-size: 18px;
     color: #333;
-    margin-bottom: 10px;
-    font-weight: 600;
+    margin-bottom: 12px;
+    font-weight: 700;
+    line-height: 1.6;
 }
 
 .protection-item p {
-    font-size: 13px;
+    font-size: 14px;
     color: #666;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
 }
 
 /* ===== 支持我们 ===== */
@@ -1249,6 +1252,22 @@ body {
 
     .protection-items {
         grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .protection-item {
+        padding: 20px 18px;
+    }
+
+    .protection-item h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+        line-height: 1.5;
+    }
+
+    .protection-item p {
+        font-size: 13px;
+        line-height: 1.6;
     }
 
     .scroll-to-top {
@@ -1371,6 +1390,32 @@ body {
         font-weight: 700;
         border-radius: 20px;
         margin-top: 5px;
+    }
+
+    /* 救援行动卡片手机优化 */
+    .protection-items {
+        gap: 16px;
+        padding: 0 15px;
+    }
+
+    .protection-item {
+        padding: 22px 18px !important;
+        border-radius: 12px;
+    }
+
+    .protection-item h3 {
+        font-size: 17px !important;
+        margin-bottom: 12px;
+        line-height: 1.6;
+        font-weight: 700;
+    }
+
+    .protection-item p {
+        font-size: 14px !important;
+        line-height: 1.8;
+        letter-spacing: 0.3px;
+        color: #666;
+        word-spacing: 2px;
     }
 
     .stats {
