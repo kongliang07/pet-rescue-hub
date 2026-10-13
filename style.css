@@ -619,6 +619,7 @@ body {
     overflow: visible;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
 .protection-item:hover {
@@ -1256,26 +1257,31 @@ body {
     .protection-items {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
-        padding: 0 15px;
+        padding: 0 12px;
+        max-width: 100%;
     }
 
     .protection-item {
-        padding: 24px 18px !important;
-        overflow: visible;
+        padding: 22px 16px !important;
+        overflow: visible !important;
+        box-sizing: border-box;
     }
 
     .protection-item h3 {
-        font-size: 17px;
-        margin-bottom: 12px;
+        font-size: 16px;
+        margin-bottom: 10px;
         line-height: 1.6;
         font-weight: 700;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .protection-item p {
-        font-size: 13px;
+        font-size: 12px;
         line-height: 1.7;
         word-break: break-word;
         white-space: normal;
+        overflow-wrap: break-word;
     }
 
     .scroll-to-top {
@@ -1400,42 +1406,57 @@ body {
         margin-top: 5px;
     }
 
-    /* 救援行动卡片手机优化 */
+    /* 救援行动卡片手机优化 - 一比一对应手机屏幕 */
     .protection-items {
+        display: grid;
         grid-template-columns: 1fr;
-        gap: 18px;
-        padding: 0 12px;
+        gap: 15px;
+        padding: 0 10px;
+        max-width: 100%;
     }
 
     .protection-item {
-        padding: 25px 20px !important;
+        background: linear-gradient(135deg, #FFE8F5 0%, #FFF5FB 100%);
+        padding: 20px 15px !important;
         border-radius: 12px;
-        min-height: auto;
-        overflow: visible;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        overflow: visible !important;
         display: flex;
         flex-direction: column;
+        min-height: auto;
+        box-sizing: border-box;
     }
 
     .protection-icon {
-        font-size: 38px;
-        margin-bottom: 15px;
+        font-size: 36px;
+        margin-bottom: 12px;
+        display: block;
+        text-align: center;
     }
 
     .protection-item h3 {
-        font-size: 16px !important;
-        margin-bottom: 12px;
-        line-height: 1.6;
+        font-size: 15px !important;
+        margin-bottom: 10px;
+        line-height: 1.5;
         font-weight: 700;
         color: #333;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
     }
 
     .protection-item p {
-        font-size: 13px !important;
-        line-height: 1.8;
-        letter-spacing: 0.2px;
+        font-size: 12px !important;
+        line-height: 1.7;
+        letter-spacing: 0px;
         color: #666;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
         word-break: break-word;
         white-space: normal;
+        hyphens: auto;
     }
 
     .stats {
