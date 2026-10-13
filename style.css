@@ -616,6 +616,9 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
 }
 
 .protection-item:hover {
@@ -1251,23 +1254,28 @@ body {
     }
 
     .protection-items {
-        grid-template-columns: 1fr;
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        padding: 0 15px;
     }
 
     .protection-item {
-        padding: 20px 18px;
+        padding: 24px 18px !important;
+        overflow: visible;
     }
 
     .protection-item h3 {
-        font-size: 16px;
-        margin-bottom: 10px;
-        line-height: 1.5;
+        font-size: 17px;
+        margin-bottom: 12px;
+        line-height: 1.6;
+        font-weight: 700;
     }
 
     .protection-item p {
         font-size: 13px;
-        line-height: 1.6;
+        line-height: 1.7;
+        word-break: break-word;
+        white-space: normal;
     }
 
     .scroll-to-top {
@@ -1394,28 +1402,40 @@ body {
 
     /* 救援行动卡片手机优化 */
     .protection-items {
-        gap: 16px;
-        padding: 0 15px;
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 0 12px;
     }
 
     .protection-item {
-        padding: 22px 18px !important;
+        padding: 25px 20px !important;
         border-radius: 12px;
+        min-height: auto;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .protection-icon {
+        font-size: 38px;
+        margin-bottom: 15px;
     }
 
     .protection-item h3 {
-        font-size: 17px !important;
+        font-size: 16px !important;
         margin-bottom: 12px;
         line-height: 1.6;
         font-weight: 700;
+        color: #333;
     }
 
     .protection-item p {
-        font-size: 14px !important;
+        font-size: 13px !important;
         line-height: 1.8;
-        letter-spacing: 0.3px;
+        letter-spacing: 0.2px;
         color: #666;
-        word-spacing: 2px;
+        word-break: break-word;
+        white-space: normal;
     }
 
     .stats {
