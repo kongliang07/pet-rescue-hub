@@ -239,9 +239,7 @@ function showPetDetails(petName) {
         detailsHTML += `<p style="margin: 8px auto; color: #666; font-size: 14px;">✓ ${detail}</p>`;
     });
 
-    detailsHTML += `</div><div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
-        <button class="btn btn-secondary" onclick="closePetModal()" style="min-width: 100px;">关闭</button>
-    </div></div>`;
+    detailsHTML += `</div></div>`;
 
     modalBody.innerHTML = detailsHTML;
     modal.classList.add('show');
@@ -277,16 +275,12 @@ function closeDetailsModal() {
 // ===== 点击模态框外部关闭 =====
 window.onclick = function(event) {
     const petModal = document.getElementById('petModal');
-    const detailsModal = document.getElementById('detailsModal');
     const donateModal = document.getElementById('donateModal');
     const volunteerModal = document.getElementById('volunteerModal');
     const searchModal = document.getElementById('searchModal');
     
     if (event.target === petModal) {
         closePetModal();
-    }
-    if (event.target === detailsModal) {
-        closeDetailsModal();
     }
     if (event.target === donateModal) {
         closeDonateForm();
@@ -594,7 +588,6 @@ function handleAdopt(petName) {
 
 window.onclick = function(event) {
     const petModal = document.getElementById('petModal');
-    const detailsModal = document.getElementById('detailsModal');
     const donateModal = document.getElementById('donateModal');
     const donateModal2 = document.getElementById('donateModal2');
     const volunteerModal = document.getElementById('volunteerModal');
@@ -603,9 +596,6 @@ window.onclick = function(event) {
     
     if (event.target === petModal) {
         closePetModal();
-    }
-    if (event.target === detailsModal) {
-        closeDetailsModal();
     }
     if (event.target === donateModal) {
         closeDonateForm();

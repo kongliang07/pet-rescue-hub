@@ -96,12 +96,12 @@ body {
 }
 
 .search-btn:hover {
-    transform: scale(1.2) rotate(15deg);
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .search-btn:active {
-    transform: scale(0.95);
+    animation: closeButtonClick 0.3s ease-in-out;
+    opacity: 0.7;
 }
 
 .donate-btn {
@@ -119,13 +119,17 @@ body {
 }
 
 .donate-btn:hover {
-    transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(255, 150, 201, 0.5);
     background: linear-gradient(135deg, #FF9EC9 0%, #FF7BA8 100%);
 }
 
+.donate-btn:focus {
+    outline: none;
+}
+
 .donate-btn:active {
-    transform: translateY(-1px);
+    animation: closeButtonClick 0.3s ease-in-out;
+    outline: none;
 }
 
 /* ===== Hero Section ===== */
@@ -184,6 +188,16 @@ body {
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     text-decoration: none;
+    outline: none;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:active {
+    animation: closeButtonClick 0.3s ease-in-out;
+    outline: none;
 }
 
 .btn-primary {
@@ -194,12 +208,16 @@ body {
 
 .btn-primary:hover {
     background: linear-gradient(135deg, #FF9EC9 0%, #FF7BA8 100%);
-    transform: translateY(-4px);
     box-shadow: 0 10px 30px rgba(255, 150, 201, 0.6);
 }
 
+.btn-primary:focus {
+    outline: none;
+}
+
 .btn-primary:active {
-    transform: translateY(-2px);
+    animation: closeButtonClick 0.3s ease-in-out;
+    outline: none;
 }
 
 .btn-secondary {
@@ -211,12 +229,16 @@ body {
 
 .btn-secondary:hover {
     background: rgba(255, 255, 255, 0.4);
-    transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
 }
 
+.btn-secondary:focus {
+    outline: none;
+}
+
 .btn-secondary:active {
-    transform: translateY(-2px);
+    animation: closeButtonClick 0.3s ease-in-out;
+    outline: none;
 }
 
 .btn-support {
@@ -230,9 +252,16 @@ body {
 }
 
 .btn-support:hover {
-    transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(255, 150, 201, 0.6);
     background: linear-gradient(135deg, #FF9EC9 0%, #FF7BA8 100%);
+}
+
+.btn-support:focus {
+    outline: none;
+}
+
+.btn-support:active {
+    animation: closeButtonClick 0.3s ease-in-out;
 }
 
 /* ===== Hero Images ===== */
@@ -429,34 +458,12 @@ body {
     flex-grow: 1;
 }
 
-.btn-adopt-main {
-    background: linear-gradient(135deg, #FFB6D9 0%, #FF9EC9 100%);
-    color: white;
-    border: 2px solid #FF9EC9;
-    padding: 13px 24px;
-    border-radius: 22px;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(255, 150, 201, 0.3);
-    text-decoration: none;
-}
 
 .btn-adopt-main:hover {
     background: linear-gradient(135deg, #FF9EC9 0%, #FF7BA8 100%);
     color: white;
     border-color: #FF7BA8;
-    transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(255, 150, 201, 0.5);
-}
-
-.btn-adopt-main:active {
-    transform: translateY(-1px);
 }
 
 /* ===== 关于我们 ===== */
@@ -884,6 +891,42 @@ body {
 }
 
 /* ===== Modal关闭按钮 ===== */
+@keyframes closeButtonPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes closeButtonRotate {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(45deg) scale(1.15);
+    }
+    100% {
+        transform: rotate(90deg) scale(1);
+    }
+}
+
+@keyframes closeButtonClick {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.85);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 .modal-close {
     position: absolute;
     right: 20px;
@@ -891,22 +934,35 @@ body {
     background: linear-gradient(135deg, #FFB6D9 0%, #FF9EC9 100%);
     color: white;
     border: none;
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 26px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 8px rgba(255, 150, 201, 0.3);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 15px rgba(255, 150, 201, 0.4);
+    animation: closeButtonPulse 2s ease-in-out infinite;
+    text-decoration: none;
 }
 
 .modal-close:hover {
     background: linear-gradient(135deg, #FF9EC9 0%, #FF7BA8 100%);
-    transform: rotate(90deg);
-    box-shadow: 0 4px 12px rgba(255, 150, 201, 0.5);
+    transform: rotate(90deg) scale(1.15);
+    box-shadow: 0 6px 20px rgba(255, 150, 201, 0.6);
+    animation: closeButtonRotate 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.modal-close:focus {
+    outline: none;
+    box-shadow: 0 4px 15px rgba(255, 150, 201, 0.4);
+}
+
+.modal-close:active {
+    animation: closeButtonClick 0.3s ease-in-out;
+    outline: none;
 }
 
 .close-btn {
@@ -1391,10 +1447,14 @@ body {
 
     .btn-learn-more {
         width: 100%;
-        padding: 12px;
-        font-size: 14px;
-        margin-bottom: 10px;
+        padding: 12px 10px;
+        font-size: 13px;
+        margin-bottom: 12px;
         border-radius: 18px;
+        line-height: 1.4;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
     }
 
     .btn-adopt-main {
@@ -1406,18 +1466,18 @@ body {
         margin-top: 5px;
     }
 
-    /* 救援行动卡片手机优化 - 一比一对应手机屏幕 */
+    /* 救援行动卡片手机优化 - 完整显示文字 */
     .protection-items {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 15px;
-        padding: 0 10px;
+        gap: 14px;
+        padding: 0 8px;
         max-width: 100%;
     }
 
     .protection-item {
         background: linear-gradient(135deg, #FFE8F5 0%, #FFF5FB 100%);
-        padding: 20px 15px !important;
+        padding: 18px 14px !important;
         border-radius: 12px;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -1430,33 +1490,34 @@ body {
     }
 
     .protection-icon {
-        font-size: 36px;
-        margin-bottom: 12px;
+        font-size: 34px;
+        margin-bottom: 10px;
         display: block;
         text-align: center;
     }
 
     .protection-item h3 {
-        font-size: 15px !important;
-        margin-bottom: 10px;
-        line-height: 1.5;
+        font-size: 14px !important;
+        margin-bottom: 8px;
+        line-height: 1.6;
         font-weight: 700;
         color: #333;
         word-wrap: break-word;
         overflow-wrap: break-word;
+        word-break: normal;
         white-space: normal;
     }
 
     .protection-item p {
-        font-size: 12px !important;
-        line-height: 1.7;
+        font-size: 11px !important;
+        line-height: 1.8;
         letter-spacing: 0px;
         color: #666;
         word-wrap: break-word;
         overflow-wrap: break-word;
-        word-break: break-word;
+        word-break: normal;
         white-space: normal;
-        hyphens: auto;
+        hyphens: manual;
     }
 
     .stats {
@@ -1604,27 +1665,33 @@ body {
     background: linear-gradient(135deg, #FFB6D9 0%, #FF9EC9 100%);
     color: white;
     border-color: #FF9EC9;
-    transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(255, 150, 201, 0.4);
 }
 
+.btn-learn-more:focus {
+    outline: none;
+}
+
 .btn-learn-more:active {
-    transform: translateY(-1px);
+    animation: closeButtonClick 0.3s ease-in-out;
+    outline: none;
 }
 
 .btn-adopt-main {
     background: linear-gradient(135deg, #FFB6D9 0%, #FF9EC9 100%);
     color: white;
     border: 2px solid #FF9EC9;
-    padding: 14px 28px;
+    padding: 13px 24px;
     border-radius: 22px;
     font-size: 15px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    width: auto;
+    width: 100%;
     margin: 0 auto;
     display: block;
+    text-align: center;
+    text-decoration: none;
     box-shadow: 0 4px 12px rgba(255, 150, 201, 0.3);
 }
 
@@ -1632,12 +1699,16 @@ body {
     background: linear-gradient(135deg, #FF9EC9 0%, #FF7BA8 100%);
     color: white;
     border-color: #FF7BA8;
-    transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(255, 150, 201, 0.5);
 }
 
+.btn-adopt-main:focus {
+    outline: none;
+}
+
 .btn-adopt-main:active {
-    transform: translateY(-1px);
+    animation: closeButtonClick 0.3s ease-in-out;
+    outline: none;
 }
 
 /* ===== 领养表单粉红色滑鼠 ===== */
@@ -1663,4 +1734,122 @@ body {
 
 .adopt-form-modal::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(180deg, #FF9EC9 0%, #FF7BA8 100%);
+}
+/* ===== 救援行动卡片 - 手机完整显示文字（最终版） ===== */
+@media (max-width: 768px) {
+    .action-section {
+        padding: 40px 16px;
+        margin: 40px auto;
+    }
+
+    .action-section .protection-items {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .action-section .protection-item {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        overflow: visible !important;
+        padding: 22px 18px !important;
+        text-align: center;
+        align-items: center;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .action-section .protection-icon {
+        font-size: 36px;
+        margin: 0 0 10px 0;
+        text-align: center;
+    }
+
+    .action-section .protection-item h3 {
+        font-size: 17px !important;
+        line-height: 1.5;
+        margin: 0 0 8px 0;
+        text-align: center;
+        white-space: normal !important;
+        overflow: visible !important;
+        word-break: keep-all;
+        overflow-wrap: anywhere;
+    }
+
+    .action-section .protection-item p {
+        font-size: 15px !important;
+        line-height: 1.7;
+        margin: 0;
+        text-align: center;
+        white-space: normal !important;
+        overflow: visible !important;
+        word-break: keep-all;
+        overflow-wrap: anywhere;
+        hyphens: none;
+        letter-spacing: 0;
+    }
+}
+
+/* ===== 了解更多按钮 - 手机完整显示（最终版） ===== */
+.btn-learn-more {
+    font-family: inherit;
+    line-height: 1.4;
+    height: auto;
+    min-height: 46px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 0;
+}
+
+@media (max-width: 768px) {
+    .btn-learn-more {
+        font-size: 15px;
+        padding: 12px 16px;
+        min-height: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-learn-more {
+        font-size: 14px;
+        padding: 12px 12px;
+        min-height: 46px;
+    }
+}
+
+/* ===== × 关闭按钮 - 去除按下时的线条（最终版） ===== */
+.modal-close,
+.modal-close:hover,
+.modal-close:focus,
+.modal-close:focus-visible,
+.modal-close:active,
+.modal-close::-moz-focus-inner,
+.close-btn,
+.close-btn:focus,
+.close-btn:focus-visible,
+.close-btn:active {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
+    text-decoration: none !important;
+    border-bottom: none !important;
+    border-top: none !important;
+}
+
+.modal-close::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+.modal-close:focus,
+.modal-close:focus-visible {
+    box-shadow: 0 4px 15px rgba(255, 150, 201, 0.4) !important;
 }
